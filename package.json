@@ -1,0 +1,30 @@
+{
+  "name": "stefanini",
+  "version": "1.0.0",
+  "description": "Teste Front-end",
+  "main": "lancamento-conta-legado.js",
+  "scripts": {
+    "start": "http-server ./app -a localhost -p 8080 -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniferrari/stefanini.git"
+  },
+  "author": "Daniele Ferrari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniferrari/stefanini/issues"
+  },
+  "homepage": "https://github.com/daniferrari/stefanini#readme",
+  "dependencies": {
+    "angular": "1.7.x",
+    "angular-animate": "1.7.x",
+    "angular-resource": "1.7.x",
+    "angular-route": "1.7.x",
+    "bootstrap": "3.3.x",
+    "jquery": "3.3.x"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
