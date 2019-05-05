@@ -1,15 +1,13 @@
 'use strict';
 
 angular.
-  module('lancamentoConta').
+  module('myapp').
   config(['$routeProvider',
     function config($routeProvider) {
       $routeProvider.
         when('/', {
-          templateUrl: '/app/lancamento-conta-legado.html',
-        })
-        .otherwise('/', {
-          templateUrl: '/app/lancamento-conta-legado.html',
-        });
+          templateUrl : "account-launch/lancamento-conta-legado.html"
+        }).
+        otherwise('/');
     }
   ]);
