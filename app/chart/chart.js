@@ -22,7 +22,9 @@ angular.
             $scope.colors.push(dynamicColors());
         });
 
-    }, function errorCallback(response) {});
+    }, function errorCallback(response) {
+        alert("Desculpe, ocorreu um erro para obter os dados, tente novamente mais tarde");
+    });
         
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
