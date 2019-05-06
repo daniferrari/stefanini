@@ -46,6 +46,55 @@ angular.
                 }
             }
         });
+
+        var ctx = document.getElementById('myChart2').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: $scope.labels,
+                datasets: [{
+                    label: 'Número de lançamentos',
+                    data: $scope.value,
+                    borderColor: $scope.colors,
+                    borderWidth: 1,
+                    backgroundColor: $scope.colors
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var ctx = document.getElementById('myChart3').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: $scope.labels,
+                datasets: [{
+                    label: 'Número de lançamentos',
+                    data: $scope.value,
+                    borderColor: $scope.colors,
+                    borderWidth: 1,
+                    backgroundColor: $scope.colors
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
     });
 
     }
