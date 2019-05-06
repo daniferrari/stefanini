@@ -49,7 +49,7 @@ angular.
 
         var ctx = document.getElementById('myChart2').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'pie',
             data: {
                 labels: $scope.labels,
                 datasets: [{
@@ -73,7 +73,7 @@ angular.
 
         var ctx = document.getElementById('myChart3').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'polarArea',
             data: {
                 labels: $scope.labels,
                 datasets: [{
