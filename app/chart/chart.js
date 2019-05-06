@@ -3,15 +3,23 @@ angular.
 
     $scope.value = [];
     $scope.labels = [];
+    $scope.colors = [];
+
+    var dynamicColors = function() {
+        var r = Math.floor(Math.random() * 255);
+        var g = Math.floor(Math.random() * 255);
+        var b = Math.floor(Math.random() * 255);
+        return "rgb(" + r + "," + g + "," + b + ")";
+    };
 
     $http.get("../data/lancamento-conta-legado.json")
     .then(function successCallback(response) {
 
         $scope.data = response;
         $scope.data.data.listaControleLancamento.forEach(element => {
-            console.log('elemen', element);
             $scope.value.push(element.quantidadeLancamentoRemessa);
             $scope.labels.push(element.dataEfetivaLancamento);
+            $scope.colors.push(dynamicColors());
         });
 
     }, function errorCallback(response) {});
@@ -22,11 +30,9 @@ angular.
         data: {
             labels: $scope.labels,
             datasets: [{
+                label: 'Lançamentos/Mês',
                 data: $scope.value,
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)'
-                ],
+                borderColor: $scope.colors,
                 borderWidth: 1
             }]
         },
