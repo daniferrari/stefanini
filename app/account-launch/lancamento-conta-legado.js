@@ -4,9 +4,7 @@ angular.
 
     var promise = releases.getReleases();
     promise.then(function(payload) {
-            $scope.data = payload;
-        },
-        function(errorPayload) {
-            $log.error('failure loading movie', errorPayload);
-        });
+        $scope.data = payload;
+    });
+
 });

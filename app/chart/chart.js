@@ -13,35 +13,40 @@ angular.
     };
 
     var promise = releases.getReleases();
-    promise.then(function(payload) {
-        $scope.data = payload;
-    },
-    function(errorPayload) {
-        $log.error('failure loading movie', errorPayload);
+    promise.then(function(data) {
+
+        $scope.data = data;
+
+        $scope.data.data.listaControleLancamento.forEach(element => {
+            $scope.value.push(element.quantidadeLancamentoRemessa);
+            $scope.labels.push(element.dataEfetivaLancamento);
+            $scope.colors.push(dynamicColors());
+        });
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: $scope.labels,
+                datasets: [{
+                    label: 'Número de lançamentos',
+                    data: $scope.value,
+                    borderColor: $scope.colors,
+                    borderWidth: 1,
+                    backgroundColor: $scope.colors
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
     });
 
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: $scope.labels,
-            datasets: [{
-                label: 'Número de lançamentos',
-                data: $scope.value,
-                borderColor: $scope.colors,
-                borderWidth: 1,
-                backgroundColor: $scope.colors
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
     }
 );
