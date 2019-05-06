@@ -7,15 +7,14 @@
     <table class="table table-responsive">
         <thead class="thead">
           <tr>
-            <th scope="col">Data do lançamento</th>
+            <th scope="col">Data lançamento</th>
             <th scope="col">Data lançamento da c.c. do cliente</th>
             <th scope="col">Descrição pagamento</th>
             <th scope="col">Lançamento c.c.</th>
             <th scope="col">Banco</th>
             <th scope="col">CNPJ</th>
-            <th scope="col">Handle</th>
-            <th scope="col">Handle</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Número de Lançamentos</th>
+            <th scope="col">Valor</th>
           </tr>
         </thead>
         <tbody>
@@ -32,7 +31,6 @@
               <p><b>Tipo:</b> {{lancamento.lancamentoContaCorrenteCliente.nomeTipoOperacao}}</p>
             </td>
             <td>{{lancamento.nomeBanco}}</td>
-            <td>{{lancamento.numeroEvento}}</td>
             <td>{{lancamento.numeroRaizCNPJ}}.{{lancamento.numeroSufixoCNPJ}}</td>
             <td>{{lancamento.quantidadeLancamentoRemessa}}</td>
             <td>{{lancamento.valorLancamentoRemessa}}</td>

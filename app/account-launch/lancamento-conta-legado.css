@@ -35,3 +35,7 @@ h3 {
 .fa-times-circle {
     color: red;
 }
+
+i {
+    display: inline;
+}
