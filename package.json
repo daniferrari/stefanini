@@ -2,7 +2,7 @@
   "name": "stefanini",
   "version": "1.0.0",
   "description": "Teste Front-end",
-  "main": "lancamento-conta-legado.js",
+  "main": "account-launch.js",
   "scripts": {
     "start": "http-server ./app -a localhost -p 8083 -c-1"
   },

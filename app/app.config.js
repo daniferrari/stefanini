@@ -6,7 +6,7 @@ angular.
     function config($routeProvider) {
       $routeProvider.
         when('/', {
-          templateUrl : "account-launch/lancamento-conta-legado.html"
+          templateUrl : "account-launch/account-launch.html"
         }).
         when('/graficos', {
           templateUrl : "chart/chart.html"
