@@ -1,12 +1,12 @@
 
 angular.
-  module('myapp').controller('lancamentoContaController', function ($scope,  $http) {
+  module('myapp').controller('lancamentoContaController', function ($scope,  $http, releases) {
 
-    $http.get("../data/lancamento-conta-legado.json")
-    .then(function successCallback(response) {
-        $scope.data = response;
-    }, function errorCallback(response) {
-        alert("Desculpe, ocorreu um erro para obter os dados, tente novamente mais tarde");
-    });
-
+    var promise = releases.getReleases();
+    promise.then(function(payload) {
+            $scope.data = payload;
+        },
+        function(errorPayload) {
+            $log.error('failure loading movie', errorPayload);
+        });
 });

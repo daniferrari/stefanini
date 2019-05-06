@@ -18,14 +18,14 @@ h3 {
     height: 8px;
     color: #c0d242;
 }
-   
+
 /* Handle */
 .table-responsive::-webkit-scrollbar-thumb {
-    background: #0274b4; 
+    background: #0274b4;
 }
 
 ::-webkit-scrollbar-track {
-    background: #c0d24252; 
+    background: #c0d24252;
 }
 
 .table-padding {
@@ -73,4 +73,8 @@ i.fas.fa-calculator {
 
 i.fas.fa-sort-numeric-up {
     color: #66c3cd;
+}
+
+.card:hover {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 }

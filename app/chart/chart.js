@@ -1,5 +1,5 @@
 angular.
-  module('myapp').controller('chartController', function ($scope,  $http) {
+  module('myapp').controller('chartController', function ($scope,  $http, releases) {
 
     $scope.value = [];
     $scope.labels = [];
@@ -12,20 +12,14 @@ angular.
         return "rgb(" + r + "," + g + "," + b + ")";
     };
 
-    $http.get("../data/lancamento-conta-legado.json")
-    .then(function successCallback(response) {
-
-        $scope.data = response;
-        $scope.data.data.listaControleLancamento.forEach(element => {
-            $scope.value.push(element.quantidadeLancamentoRemessa);
-            $scope.labels.push(element.dataEfetivaLancamento);
-            $scope.colors.push(dynamicColors());
-        });
-
-    }, function errorCallback(response) {
-        alert("Desculpe, ocorreu um erro para obter os dados, tente novamente mais tarde");
+    var promise = releases.getReleases();
+    promise.then(function(payload) {
+        $scope.data = payload;
+    },
+    function(errorPayload) {
+        $log.error('failure loading movie', errorPayload);
     });
-        
+
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',

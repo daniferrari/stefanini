@@ -4,7 +4,7 @@
   "description": "Teste Front-end",
   "main": "lancamento-conta-legado.js",
   "scripts": {
-    "start": "http-server ./app -a localhost -p 8080 -c-1"
+    "start": "http-server ./app -a localhost -p 8083 -c-1"
   },
   "repository": {
     "type": "git",

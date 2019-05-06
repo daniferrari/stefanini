@@ -5,57 +5,59 @@
 
   <div class="container">
     <div class="row cards">
-      <div class="col-sm">
+      <div class="col-sm card">
         <i class="fas fa-calculator"></i>
-        <p>Quantidade de lançamentos: </p> 
-        <p>{{data.data.totalControleLancamento.quantidadeLancamentos}}</p>
+        <p>Quantidade de lançamentos: </p>
+        <b>{{data.data.totalControleLancamento.quantidadeLancamentos}}</b>
       </div>
-      <div class="col-sm">
+      <div class="col-sm card">
         <i class="fas fa-sort-numeric-up"></i>
         <p>Quantidade de remessas: </p>
-        <p>{{data.data.totalControleLancamento.quantidadeRemessas}}</p>
+        <b>{{data.data.totalControleLancamento.quantidadeRemessas}}</b>
       </div>
-      <div class="col-sm">
+      <div class="col-sm card">
         <i class="fas fa-file-invoice-dollar"></i>
-        <p>Valor total de lançamentos:</p>
-        <p>{{data.data.totalControleLancamento.valorLancamentos}}</p>
+        <p>Valor total de lançamentos: </p>
+        <b>{{data.data.totalControleLancamento.valorLancamentos |  currency:'R$' }}</b>
       </div>
     </div>
   </div>
 
   <div class="table-padding">
-    <table class="table table-responsive">
-        <thead class="thead">
-          <tr>
-            <th scope="col">Data lançamento</th>
-            <th scope="col">Data lançamento da c.c. do cliente</th>
-            <th scope="col">Descrição pagamento</th>
-            <th scope="col">Lançamento c.c.</th>
-            <th scope="col">Banco</th>
-            <th scope="col">CNPJ</th>
-            <th scope="col">Número de Lançamentos</th>
-            <th scope="col">Valor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat='lancamento in data.data.listaControleLancamento | orderBy:"descricaoGrupoPagamento"'>
-            <td>{{lancamento.dataEfetivaLancamento}}</td>
-            <td>{{lancamento.dataLancamentoContaCorrenteCliente}}</td>
-            <td>{{lancamento.descricaoGrupoPagamento}}</td>
-            <td>
-              <p>
-                <b>Situação:</b> {{lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa}}
-                <i ng-if='lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa == "Pago"' class="far fa-check-circle"></i>
-                <i ng-if='lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa != "Pago"' class="far fa-times-circle"></i>
-              </p>
-              <p><b>Tipo:</b> {{lancamento.lancamentoContaCorrenteCliente.nomeTipoOperacao}}</p>
-            </td>
-            <td>{{lancamento.nomeBanco}}</td>
-            <td>{{lancamento.numeroRaizCNPJ}}/{{lancamento.numeroSufixoCNPJ}}</td>
-            <td>{{lancamento.quantidadeLancamentoRemessa}}</td>
-            <td>{{lancamento.valorLancamentoRemessa |  currency:'R$' }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div class="table-responsive">
+      <table class="table">
+          <thead class="thead">
+            <tr>
+              <th scope="col">Data lançamento</th>
+              <th scope="col">Data lançamento da c.c. do cliente</th>
+              <th scope="col">Descrição pagamento</th>
+              <th scope="col">Lançamento c.c.</th>
+              <th scope="col">Banco</th>
+              <th scope="col">CNPJ</th>
+              <th scope="col">Número de Lançamentos</th>
+              <th scope="col">Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat='lancamento in data.data.listaControleLancamento | orderBy:"descricaoGrupoPagamento"'>
+              <td>{{lancamento.dataEfetivaLancamento}}</td>
+              <td>{{lancamento.dataLancamentoContaCorrenteCliente}}</td>
+              <td>{{lancamento.descricaoGrupoPagamento}}</td>
+              <td>
+                <p>
+                  <b>Situação:</b> {{lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa}}
+                  <i ng-if='lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa == "Pago"' class="far fa-check-circle"></i>
+                  <i ng-if='lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa != "Pago"' class="far fa-times-circle"></i>
+                </p>
+                <p><b>Tipo:</b> {{lancamento.lancamentoContaCorrenteCliente.nomeTipoOperacao}}</p>
+              </td>
+              <td>{{lancamento.nomeBanco}}</td>
+              <td>{{lancamento.numeroRaizCNPJ}}/{{lancamento.numeroSufixoCNPJ}}</td>
+              <td>{{lancamento.quantidadeLancamentoRemessa}}</td>
+              <td>{{lancamento.valorLancamentoRemessa |  currency:'R$' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
   </div>
+</div>
