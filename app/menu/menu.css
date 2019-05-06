@@ -4,10 +4,6 @@ menu {
     margin-bottom: 20px;
 }
 
-.navbar {
-    color: blueviolet;
-}
-
 img {
     width: 40px;
 }
@@ -17,5 +13,9 @@ a.nav-link {
 }
 
 a.nav-link:hover {
-    color:#023f84 !important
+    color:#023f84 !important;
+}
+
+.bg-light {
+    background-color: #c2c3ba1c !important;
 }
