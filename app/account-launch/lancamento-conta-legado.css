@@ -27,3 +27,11 @@ h3 {
 .table-padding {
     padding: 20px;
 }
+
+.fa-check-circle {
+    color: #c0d242;
+}
+
+.fa-times-circle {
+    color: red;
+}

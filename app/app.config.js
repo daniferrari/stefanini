@@ -6,10 +6,10 @@ angular.
     function config($routeProvider) {
       $routeProvider.
         when('/', {
-          templateUrl : "chart/chart.html"
+          templateUrl : "account-launch/lancamento-conta-legado.html"
         }).
         when('/graficos', {
-          templateUrl : "account-launch/lancamento-conta-legado.html"
+          templateUrl : "chart/chart.html"
         }).
         otherwise('/');
     }

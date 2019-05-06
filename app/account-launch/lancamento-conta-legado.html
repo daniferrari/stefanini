@@ -24,7 +24,11 @@
             <td>{{lancamento.dataLancamentoContaCorrenteCliente}}</td>
             <td>{{lancamento.descricaoGrupoPagamento}}</td>
             <td>
-              <p><b>Situação:</b> {{lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa}}</p>
+              <p>
+                <b>Situação:</b> {{lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa}}
+                <i ng-if='lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa == "Pago"' class="far fa-check-circle"></i>
+                <i ng-if='lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa != "Pago"' class="far fa-times-circle"></i>
+              </p>
               <p><b>Tipo:</b> {{lancamento.lancamentoContaCorrenteCliente.nomeTipoOperacao}}</p>
             </td>
             <td>{{lancamento.nomeBanco}}</td>
