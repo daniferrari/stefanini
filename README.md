@@ -1,10 +1,11 @@
 # stefanini
 Teste Front-end
 
-# Para rodar o projeto é necessário:
+### Para rodar o projeto é necessário:
 
-NPM
-Node.js
+* NPM
+* Node.js
+
 na pasta raiz:
 
 * npm install
