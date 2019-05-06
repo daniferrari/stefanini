@@ -7,11 +7,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
     <script src="app.module.js"></script>
     <script src="app.config.js"></script>
+
+    <script src="account-launch/lancamento-conta-legado.module.js"></script>
     <script src="account-launch/lancamento-conta-legado.js"></script>
+    <link rel="stylesheet" href="account-launch/lancamento-conta-legado.css">
+
+    <script src="menu/menu.module.js"></script>
+    <script src="menu/menu.js"></script>
+    <link rel="stylesheet" href="menu/menu.css">
+    
+    <script src="chart/chart.module.js"></script>
+    <script src="chart/chart.js"></script>
+    <link rel="stylesheet" href="chart/chart.css">
+    
   </head>
   <body>
+    <menu></menu>
     <div ng-view></div>
   </body>
 </html>

@@ -1,38 +1,40 @@
-<body ng-controller="lancamentoContaController">
 
-  <div>
-    <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-    
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Data do lançamento</th>
-          <th scope="col">Data do lanámento da conta corrente do cliente</th>
-          <th scope="col">Handle</th>
-          <th scope="col">Handle</th>
-          <th scope="col">Handle</th>
-          <th scope="col">Handle</th>
-          <th scope="col">Handle</th>
-          <th scope="col">Handle</th>
-          <th scope="col">Handle</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="lancamento in data.data.listaControleLancamento">
-          <td>{{lancamento.codigoIdentificadorUnico}}</td>
-          <td>{{lancamento.dataEfetivaLancamento}}</td>
-          <td>{{lancamento.dataLancamentoContaCorrenteCliente}}</td>
-          <td>{{lancamento.descricaoGrupoPagamento}}</td>
-          <td>{{lancamento.lancamentoContaCorrenteCliente | json}}</td>
-          <td>{{lancamento.nomeBanco}}</td>
-          <td>{{lancamento.numeroEvento}}</td>
-          <td>{{lancamento.numeroRaizCNPJ}}</td>
-          <td>{{lancamento.numeroSufixoCNPJ}}</td>
-          <td>{{lancamento.quantidadeLancamentoRemessa}}</td>
-          <td>{{lancamento.valorLancamentoRemessa}}</td>
-        </tr>
-      </tbody>
-    </table>
+<div ng-controller="lancamentoContaController">
+
+  <h3>Controle de lançamento</h3>
+
+  <div class="table-padding">
+    <table class="table table-responsive">
+        <thead class="thead">
+          <tr>
+            <th scope="col">Data do lançamento</th>
+            <th scope="col">Data lançamento da c.c. do cliente</th>
+            <th scope="col">Descrição pagamento</th>
+            <th scope="col">Lançamento c.c.</th>
+            <th scope="col">Banco</th>
+            <th scope="col">CNPJ</th>
+            <th scope="col">sulfixo CNPJ</th>
+            <th scope="col">Handle</th>
+            <th scope="col">Handle</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="lancamento in data.data.listaControleLancamento">
+            <td>{{lancamento.dataEfetivaLancamento}}</td>
+            <td>{{lancamento.dataLancamentoContaCorrenteCliente}}</td>
+            <td>{{lancamento.descricaoGrupoPagamento}}</td>
+            <td>{{lancamento.lancamentoContaCorrenteCliente | json}}</td>
+            <td>{{lancamento.nomeBanco}}</td>
+            <td>{{lancamento.numeroEvento}}</td>
+            <td>{{lancamento.numeroRaizCNPJ}}</td>
+            <td>{{lancamento.numeroSufixoCNPJ}}</td>
+            <td>{{lancamento.quantidadeLancamentoRemessa}}</td>
+            <td>{{lancamento.valorLancamentoRemessa}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
+  <!-- <chart></chart> -->

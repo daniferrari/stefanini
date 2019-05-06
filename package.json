@@ -22,6 +22,7 @@
     "angular-resource": "1.7.x",
     "angular-route": "1.7.x",
     "bootstrap": "3.3.x",
+    "chart.js": "^2.8.0",
     "jquery": "3.3.x"
   },
   "devDependencies": {

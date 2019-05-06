@@ -1,0 +1,29 @@
+
+thead.thead {
+    background: #c0d242;
+    color: white;
+}
+
+h3 {
+    color: #c0d242;
+    text-shadow: 2px 2px #c0d2426b;
+    text-align: center;
+}
+
+.table-responsive::-webkit-scrollbar {
+    height: 8px;
+    color: #c0d242;
+}
+   
+/* Handle */
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #c0d242; 
+}
+
+::-webkit-scrollbar-track {
+    background: #c0d24252; 
+}
+
+.table-padding {
+    padding: 20px;
+}
