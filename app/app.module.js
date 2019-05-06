@@ -1,2 +1,2 @@
 'use strict';
-angular.module("myapp", ["ngRoute", "menu", "chart"]);
+angular.module("myapp", ["ngRoute", "menu"]);

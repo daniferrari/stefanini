@@ -13,7 +13,6 @@
             <th scope="col">Lançamento c.c.</th>
             <th scope="col">Banco</th>
             <th scope="col">CNPJ</th>
-            <th scope="col">sulfixo CNPJ</th>
             <th scope="col">Handle</th>
             <th scope="col">Handle</th>
             <th scope="col">Handle</th>
@@ -24,11 +23,13 @@
             <td>{{lancamento.dataEfetivaLancamento}}</td>
             <td>{{lancamento.dataLancamentoContaCorrenteCliente}}</td>
             <td>{{lancamento.descricaoGrupoPagamento}}</td>
-            <td>{{lancamento.lancamentoContaCorrenteCliente | json}}</td>
+            <td>
+              <p><b>Situação:</b> {{lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa}}</p>
+              <p><b>Tipo:</b> {{lancamento.lancamentoContaCorrenteCliente.nomeTipoOperacao}}</p>
+            </td>
             <td>{{lancamento.nomeBanco}}</td>
             <td>{{lancamento.numeroEvento}}</td>
-            <td>{{lancamento.numeroRaizCNPJ}}</td>
-            <td>{{lancamento.numeroSufixoCNPJ}}</td>
+            <td>{{lancamento.numeroRaizCNPJ}}.{{lancamento.numeroSufixoCNPJ}}</td>
             <td>{{lancamento.quantidadeLancamentoRemessa}}</td>
             <td>{{lancamento.valorLancamentoRemessa}}</td>
           </tr>
@@ -36,5 +37,3 @@
       </table>
     </div>
   </div>
-
-  <!-- <chart></chart> -->
