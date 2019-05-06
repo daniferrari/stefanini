@@ -7,5 +7,5 @@ NPM
 Node.js
 na pasta raiz:
 
-npm install
-npm start
+* npm install
+* npm start
