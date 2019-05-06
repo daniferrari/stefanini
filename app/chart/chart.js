@@ -32,7 +32,7 @@ angular.
         data: {
             labels: $scope.labels,
             datasets: [{
-                label: 'Lançamentos/Mês',
+                label: 'Número de lançamentos',
                 data: $scope.value,
                 borderColor: $scope.colors,
                 borderWidth: 1,

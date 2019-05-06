@@ -47,3 +47,12 @@ h3 {
 table {
     text-align: center;
 }
+
+.cards {
+    text-align: center;
+}
+
+.col-sm {
+    border: 1px solid blue;
+    margin: 3px;
+}
