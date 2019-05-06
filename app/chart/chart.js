@@ -35,7 +35,8 @@ angular.
                 label: 'Lançamentos/Mês',
                 data: $scope.value,
                 borderColor: $scope.colors,
-                borderWidth: 1
+                borderWidth: 1,
+                backgroundColor: $scope.colors
             }]
         },
         options: {

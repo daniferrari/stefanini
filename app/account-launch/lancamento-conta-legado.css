@@ -4,6 +4,10 @@ thead.thead {
     color: white;
 }
 
+.table thead th {
+    vertical-align: middle;
+}
+
 h3 {
     color: #c0d242;
     text-shadow: 2px 2px #c0d2426b;
@@ -38,4 +42,8 @@ h3 {
 
 .far {
     display: inline;
+}
+
+table {
+    text-align: center;
 }
