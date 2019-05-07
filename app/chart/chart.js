@@ -1,8 +1,12 @@
 angular.
   module('myapp').controller('chartController', function ($scope,  $http, releases) {
 
-    $scope.value = [];
-    $scope.labels = [];
+    $scope.valueChart1 = [];
+    $scope.valueChart2 = [];
+    $scope.valueChart3 = [];
+    $scope.labelChart1 = [];
+    $scope.labelChart2 = [];
+    $scope.labelChart3 = [];
     $scope.colors = [];
 
     var dynamicColors = function() {
@@ -18,8 +22,12 @@ angular.
         $scope.data = data;
 
         $scope.data.data.listaControleLancamento.forEach(element => {
-            $scope.value.push(element.quantidadeLancamentoRemessa);
-            $scope.labels.push(element.dataEfetivaLancamento);
+            $scope.valueChart1.push(element.quantidadeLancamentoRemessa);
+            $scope.valueChart2.push(element.valorLancamentoRemessa.toFixed(2));
+            $scope.valueChart3.push(((element.valorLancamentoRemessa)/(element.quantidadeLancamentoRemessa)).toFixed(2));
+            $scope.labelChart1.push(element.dataEfetivaLancamento);
+            $scope.labelChart2.push(element.dataLancamentoContaCorrenteCliente);
+            $scope.labelChart3.push(element.numeroEvento);
             $scope.colors.push(dynamicColors());
         });
 
@@ -27,10 +35,10 @@ angular.
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: $scope.labels,
+                labels: $scope.labelChart1,
                 datasets: [{
                     label: 'Número de lançamentos',
-                    data: $scope.value,
+                    data: $scope.valueChart1,
                     borderColor: $scope.colors,
                     borderWidth: 1,
                     backgroundColor: $scope.colors
@@ -51,10 +59,10 @@ angular.
         var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: $scope.labels,
+                labels: $scope.labelChart2,
                 datasets: [{
                     label: 'Número de lançamentos',
-                    data: $scope.value,
+                    data: $scope.valueChart2,
                     borderColor: $scope.colors,
                     borderWidth: 1,
                     backgroundColor: $scope.colors
@@ -75,10 +83,10 @@ angular.
         var myChart = new Chart(ctx, {
             type: 'polarArea',
             data: {
-                labels: $scope.labels,
+                labels: $scope.labelChart3,
                 datasets: [{
                     label: 'Número de lançamentos',
-                    data: $scope.value,
+                    data: $scope.valueChart3,
                     borderColor: $scope.colors,
                     borderWidth: 1,
                     backgroundColor: $scope.colors
