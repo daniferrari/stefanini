@@ -3,7 +3,7 @@ angular.
   module('myapp').service('releases', function($http) {
 
     this.getReleases = function (x) {
-        return $http.get("../data/lancamento-conta-legado.json")
+        return $http.get(url)
         .then(
             function successCallback(response) {
                 return response;
